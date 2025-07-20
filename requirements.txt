@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-streamlit
 pandas
 numpy
 matplotlib
 seaborn
 scikit-learn
-openai
-reportlab
+joblib
+fpdf
+streamlit
 
-=======
-streamlit
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
->>>>>>> 33819300a9ba061b7bfc6dc8c09c274258858a09

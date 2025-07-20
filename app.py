@@ -108,6 +108,56 @@ def age_message(age: int) -> str:
 
 st.set_page_config(page_title="Smart Mall Segmentation", layout="wide")
 st.title("🛍️ Smart Mall Customer Segmentation & Assistant")
+st.markdown("""
+<div style='
+    background-color: rgba(240, 240, 240, 0.1); 
+    padding: 16px 24px; 
+    border-left: 5px solid #4CAF50; 
+    border-radius: 8px; 
+    font-size: 16px;
+    color: inherit;
+    line-height: 1.6;
+'>
+    <strong style="font-size: 18px;">Welcome to the Smart Mall Customer Segmentation App!</strong><br>
+    Explore customer insights using clustering and visualizations.<br>
+    Get personalized product recommendations powered by ML.
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+    <style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #f0f0f0;
+        color: #555;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 14px;
+        box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+        z-index: 100;
+    }
+
+    /* Light/Dark mode adaptive text */
+    @media (prefers-color-scheme: dark) {
+        .footer {
+            background-color: #111;
+            color: #ccc;
+        }
+    }
+
+    /* Push page content up above the footer */
+    .main > div {
+        padding-bottom: 60px;
+    }
+    </style>
+
+    <div class="footer">
+        Made with ❤️ by <strong>Sudheshna Reddy</strong>
+    </div>
+""", unsafe_allow_html=True)
 
 # Sidebar – Data upload & parameters
 st.sidebar.header("📂 Data & Parameters")
@@ -124,10 +174,18 @@ else:
     st.warning("Please upload a data file to continue.")
     st.stop()
 
-# Standardise column names if necessary
+# Standardise column names only if structure matches
 expected_cols = ['CustomerID', 'Gender', 'Age', 'Annual Income (k$)', 'Spending Score (1-100)']
-if list(df.columns) != expected_cols:
-    df.columns = expected_cols  # assumes same number/order
+if len(df.columns) == len(expected_cols):
+    df.columns = expected_cols
+else:
+    st.error("Please upload a data file to continue.")
+    st.stop()
+
+
+
+
+
 
 # Main tabs
 info_tab, viz_tab, cluster_tab, assistant_tab = st.tabs(["📊 Exploratory", "📈 Visualisations", "🔍 Clustering", "🤖 SmartMall Assistant"])

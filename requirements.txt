@@ -1,9 +1,7 @@
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
-joblib
-fpdf
-streamlit
-
+streamlit>=1.33.0
+pandas>=2.2.0
+numpy>=1.26.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+scikit-learn>=1.5.0
+fpdf==1.7.2

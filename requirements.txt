@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 streamlit
 pandas
 numpy
@@ -7,3 +8,11 @@ scikit-learn
 openai
 reportlab
 
+=======
+streamlit
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+>>>>>>> 33819300a9ba061b7bfc6dc8c09c274258858a09
